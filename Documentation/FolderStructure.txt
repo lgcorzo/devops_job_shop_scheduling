@@ -1,0 +1,202 @@
+|   .env
+|   .gitignore
+|   FolderStructure.txt
+|   LICENSE
+|   setup.cfg
+|               
++---.vscode
+|       launch.json
+|       settings.json
+|       
++---Code
+|   |   parser_calendar.py
+|   |   rcpsp_calendar.py
+|   |   rcpsp_calendar_examples.py
+|   |   rcpsp_calendar_utils.py
+|   |   rcpsp_datasets.py
+|   |   __init__.py
+|           
++---Data
+|   \---rcpsp
+|           j1010_1.mm
+|           j1010_10.mm
+|           j1010_10_2.mm
+|           j1010_10_2_calendar.mm
+|           j1010_10_calendar.mm
+|           j1010_1_calendar.mm
+|           j1010_2.mm
+|           j1010_2_calendar.mm
+|           j1010_3.mm
+|           j1010_3_calendar.mm
+|           j1010_4.mm
+|           j1010_4_calendar.mm
+|           j1010_5.mm
+|           j1010_5_calendar.mm
+|           j1010_6.mm
+|           j1010_6_calendar.mm
+|           j1010_7.mm
+|           j1010_7_calendar.mm
+|           j1010_8.mm
+|           j1010_8_calendar.mm
+|           j1010_9.mm
+|           j1010_9_calendar.mm
+|           j1201_1.sm
+|           j1201_10.sm
+|           j1201_10_calendar.sm
+|           j1201_1_calendar.sm
+|           j1201_2.sm
+|           j1201_2_calendar.sm
+|           j1201_3.sm
+|           j1201_3_calendar.sm
+|           j1201_4.sm
+|           j1201_4_calendar.sm
+|           j1201_5.sm
+|           j1201_5_calendar.sm
+|           j1201_6.sm
+|           j1201_6_calendar.sm
+|           j1201_7.sm
+|           j1201_7_calendar.sm
+|           j1201_8.sm
+|           j1201_8_calendar.sm
+|           j1201_9.sm
+|           j1201_9_calendar.sm
+|           j301_1.sm
+|           j301_10.sm
+|           j301_10_calendar.sm
+|           j301_1_calendar.sm
+|           j301_2.sm
+|           j301_2_calendar.sm
+|           j301_3.sm
+|           j301_3_calendar.sm
+|           j301_4.sm
+|           j301_4_calendar.sm
+|           j301_5.sm
+|           j301_5_calendar.sm
+|           j301_6.sm
+|           j301_6_calendar.sm
+|           j301_7.sm
+|           j301_7_calendar.sm
+|           j301_8.sm
+|           j301_8_calendar.sm
+|           j301_9.sm
+|           j301_9_calendar.sm
+|           j601_1.sm
+|           j601_10.sm
+|           j601_10_calendar.sm
+|           j601_1_calendar.sm
+|           j601_2.sm
+|           j601_2_calendar.sm
+|           j601_3.sm
+|           j601_3_calendar.sm
+|           j601_4.sm
+|           j601_4_calendar.sm
+|           j601_5.sm
+|           j601_5_calendar.sm
+|           j601_6.sm
+|           j601_6_calendar.sm
+|           j601_7.sm
+|           j601_7_calendar.sm
+|           j601_8.sm
+|           j601_8_calendar.sm
+|           j601_9.sm
+|           j601_9_calendar.sm
+|           
++---Documentation
+|   |   README.md
+|   |   
+|   +---Media     
+|   \---References
+|           iMOPSE_a_library_for_bicriteria_optimization_in_Mu.pdf
+|           
++---Notebooks
+|   \---RCPSP tutorials
+|           RCPSP-1 Introduction.ipynb
+|           RCPSP-2 Heuristics Solving.ipynb
+|           RCPSP-3 Local search.ipynb
+|           RCPSP-4 Linear programming.ipynb
+|           RCPSP-5 Constraint Programming.ipynb
+|           RCPSP-6 Large Neighbourhood Search .ipynb
+|           
++---Settings
+|       rcpsp_code_env.yml
+|       
++---Tests
+|   |   __init__.py
+|   |   
+|   +---Unit
+|   |   |   __init__.py
+|   |   |   
+|   |   +---Code
+|   |   |   |   test_rcpsp_calendar.py
+|   |   |   |   test_rcpsp_calendar_examples.py
+|   |   |   |   test_rcpsp_datasets.py
+|   |   |   |   __init__.py
+|   |   |   |   
+|   |   |   +---Fixtures
+|   |   |   |       j301_1_calendar.sm
+|   |   |   |       
+|   |   |         
+\---Utils
+    +---Imopse
+    |   |   imopse_GARunner.zip
+    |   |   imopse_generator.zip
+    |   |   imopse_GreedyRunner.zip
+    |   |   imopse_validator_pack.zip
+    |   |   imopse_visualizer.zip
+    |   |   
+    |   \---imopse_validator_pack
+    |       \---IMOPSE
+    |           |   dataset_def.zip
+    |           |   def_small.zip
+    |           |   sample_solutions.zip
+    |           |   usersGuide.pdf
+    |           |   usersGuide_caseStudy.pdf
+    |           |   validator.jar
+    |           |   
+    |           \---dataset_def
+    |                   100_10_26_15.def
+    |                   100_10_27_9_D2.def
+    |                   100_10_47_9.def
+    |                   100_10_48_15.def
+    |                   100_10_64_9.def
+    |                   100_10_65_15.def
+    |                   100_20_22_15.def
+    |                   100_20_23_9_D1.def
+    |                   100_20_46_15.def
+    |                   100_20_47_9.def
+    |                   100_20_65_15.def
+    |                   100_20_65_9.def
+    |                   100_5_20_9_D3.def
+    |                   100_5_22_15.def
+    |                   100_5_46_15.def
+    |                   100_5_48_9.def
+    |                   100_5_64_15.def
+    |                   100_5_64_9.def
+    |                   200_10_128_15.def
+    |                   200_10_135_9_D6.def
+    |                   200_10_50_15.def
+    |                   200_10_50_9.def
+    |                   200_10_84_9.def
+    |                   200_10_85_15.def
+    |                   200_20_145_15.def
+    |                   200_20_150_9_D5.def
+    |                   200_20_54_15.def
+    |                   200_20_55_9.def
+    |                   200_20_97_15.def
+    |                   200_20_97_9.def
+    |                   200_40_130_9_D4.def
+    |                   200_40_133_15.def
+    |                   200_40_45_15.def
+    |                   200_40_45_9.def
+    |                   200_40_90_9.def
+    |                   200_40_91_15.def
+    |                   
+    +---psplib
+    |       progen-sfx.exe
+    |       
+    \---RESCON
+            example project.rcp
+            Quickstart guide.pdf
+            RESCON 52.exe
+            Rescon user's manual.pdf
+            

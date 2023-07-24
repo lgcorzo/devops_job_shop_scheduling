@@ -1,0 +1,41 @@
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.13
+  - pip
+  - pip:
+    - scikit-decide==0.9.6
+    - simplejson
+    - networkx
+    - discrete_optimization
+    - flake8
+    - flake8-formatter-junit-xml
+    - numpy
+    - pytest
+    - pytest-cov
+    - python-dotenv
+    - scikit-learn
+    - tqdm
+    - fastparquet
+    - autopep8
+    - pytups
+    - click
+    - pandas
+    - orloge
+    - jsonschema
+    - cornflow_client
+    - pyomo
+    - ortools
+    - tabulate
+    - pygount
+    - plotly
+    - seaborn
+    - ipykernel
+    - nbformat
+    - webcolors
+    - openpyxl
+    
+name: rcpsp_code_env
+
+
