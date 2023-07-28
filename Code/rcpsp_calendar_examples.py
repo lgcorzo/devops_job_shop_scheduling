@@ -1,9 +1,6 @@
-# cspell:disable
 import logging
 import nest_asyncio
-import glob
-import os
-import pandas as pd
+
 
 from Code.rcpsp_calendar import parse_file
 from Code.rcpsp_calendar_utils import (plot_resource_individual_gantt,
@@ -106,11 +103,6 @@ def do_singlemode_ga_calendar(file_name):
 
 
 if __name__ == "__main__":
-    rcpsp_problem_list = []
-
-    # projects_df = pd.read_excel('Resources_calendar.xlsx', sheet_name='projects')
-    # sprint_calendar_resources_df = pd.read_excel('Resources_calendar.xlsx', sheet_name='calendar')
-    # print(sprint_calendar_resources_df)
     file_name = "j301_10_calendar.sm"
     do_singlemode_ga_calendar(file_name)
     # do_singlemode_calendar(file_name)
