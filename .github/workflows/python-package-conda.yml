@@ -20,7 +20,7 @@ jobs:
     - name:  install minizinc
       run: |
           #  install minizinc
-          sudo apt install minizinc -y
+          sudo snap install minizinc --classic
     - name: Add conda to system path
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
@@ -41,10 +41,8 @@ jobs:
 
         # Add PATH to environment
         echo $CONDA/envs/${{ env.conda_environment_name }}/bin >> $GITHUB_PATH
-
-        
+       
         conda env list
-
 
     - name: Lint with flake8
       run: |
