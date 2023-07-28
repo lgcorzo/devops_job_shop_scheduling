@@ -24,7 +24,7 @@ def get_data_available(
     """
     if data_folder is None:
         data_home = get_data_home(data_home=data_home)
-        data_folder = f"{data_home}/rcpsp"
+        data_folder = os.path.join(data_home, 'rcpsp')
 
     try:
         files = [
@@ -224,7 +224,7 @@ def add_calendar_psplib(file_path):
 
 if __name__ == "__main__":
     import glob
-    folder_path = r".\Data\rcpsp"
+    folder_path = r"./Data/rcpsp"
     files_list = glob.glob(folder_path + "/*.sm") + glob.glob(folder_path + "/*.mm")
     # add calendar to the psplib data
     for files_path in files_list:

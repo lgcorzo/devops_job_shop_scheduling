@@ -24,11 +24,11 @@ class TestGetDataAvailable(unittest.TestCase):
     @patch("Code.rcpsp_calendar.os.listdir", return_value=["file1.sm", "file2.mm", "other_file.txt"])
     @patch("Code.rcpsp_calendar.os.path.abspath", side_effect=lambda x: f"abspath_{x}")
     def test_get_data_available(self, abspath_mock: Mock, listdir_mock: Mock):
-        expected = ["abspath_rcpsp\\file1.sm", "abspath_rcpsp\\file2.mm"]
+        expected = [os.path.join("abspath_rcpsp", "file1.sm"), os.path.join("abspath_rcpsp", "file2.mm")]
         result = get_data_available(data_folder="rcpsp")
         self.assertEqual(result, expected)
         listdir_mock.assert_called_once_with("rcpsp")
-        abspath_mock.assert_has_calls([call("rcpsp\\file1.sm"), call("rcpsp\\file2.mm")])
+        abspath_mock.assert_has_calls([call(os.path.join("rcpsp", "file1.sm")), call(os.path.join("rcpsp", "file2.mm"))])
 
 
 class TestFindtaskPosition(unittest.TestCase):

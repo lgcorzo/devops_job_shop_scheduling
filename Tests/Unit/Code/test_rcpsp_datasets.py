@@ -1,3 +1,4 @@
+import os
 from unittest import TestCase
 from unittest.mock import patch
 
@@ -28,8 +29,11 @@ class TestDataAvailable(TestCase):
     def test_get_data_available(self):
         with patch("Code.rcpsp_datasets.os.listdir") as mock_listdir:
             mock_listdir.return_value = ["file1.txt", "file2.txt", "file3.csv", "file4.json", "file5.pk"]
-            with patch("Code.rcpsp_datasets.path_to_data", "/path/to/data"):
-                expected_output = ["/path/to/data\\file1.txt", "/path/to/data\\file2.txt", "/path/to/data\\file3.csv"]
+            path_data = os.path.join("path", "to", "data")
+            with patch("Code.rcpsp_datasets.path_to_data", path_data):
+                expected_output = [os.path.join(path_data, "file1.txt"),
+                                   os.path.join(path_data, "file2.txt"),
+                                   os.path.join(path_data, "file3.csv")]
                 self.assertEqual(get_data_available(), expected_output)
 
     def test_get_data_available_with_no_files(self):
