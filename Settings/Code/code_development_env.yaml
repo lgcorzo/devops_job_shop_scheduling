@@ -36,6 +36,6 @@ dependencies:
     - webcolors
     - openpyxl
     
-name: rcpsp_code_env
+name: code_development_env
 
 
