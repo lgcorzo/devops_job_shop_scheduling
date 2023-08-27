@@ -38,6 +38,7 @@ $$
   - [modifications](#modifications)
 - [Results comparation (lantek Solution)](#results-comparation-lantek-solution)
 - [pipelines](#pipelines)
+- [read backlog from devops](#read-backlog-from-devops)
 
 <!-- cspell:enable -->
 
@@ -412,3 +413,8 @@ graph TD;
     H --> I[Fin del algoritmo genético];
     H --> B;
 :::
+<!-- cspell:enable -->
+## read backlog from devops
+
+It is possible to read the backlog using the  rest api , the azure cli and azure devops sdk
+

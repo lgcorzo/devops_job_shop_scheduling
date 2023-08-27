@@ -50,6 +50,29 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+        - name: Test with pytest and generate coverage report
       run: |
-        pytest
+          pytest -m "not Integration" --cov=Code --cov-report=xml --cov-config=tox.ini --cov-branch
+      
+    - name: Upload coverage report as artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: coverage-report
+          path: coverage.xml
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      with:
+            args: > 
+              -Dsonar.organization=lgcorzo
+              -Dsonar.projectKey=lgcorzo_devops_job_shop_scheduling
+              -Dsonar.python.version=3
+              -Dsonar.sources=Code
+              -Dsonar.dynamicAnalysis=reuseReports
+              -Dsonar.core.codeCoveragePlugin=cobertura
+              -Dsonar.python.coverage.reportPaths=*coverage*.xml
+              -Dsonar.python.xunit.reportPath=xunit-result*.xml
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      
