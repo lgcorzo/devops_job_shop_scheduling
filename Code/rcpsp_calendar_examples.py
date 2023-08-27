@@ -104,5 +104,5 @@ def do_singlemode_ga_calendar(file_name):
 
 if __name__ == "__main__":
     file_name = "j301_10_calendar.sm"
-    do_singlemode_ga_calendar(file_name)
-    # do_singlemode_calendar(file_name)
+    # do_singlemode_ga_calendar(file_name)
+    do_singlemode_calendar(file_name)

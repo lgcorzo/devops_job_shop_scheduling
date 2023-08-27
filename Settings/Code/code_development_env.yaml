@@ -2,7 +2,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8.13
+  - python=3.8.16
   - pip
   - pip:
     - scikit-decide==0.9.6
@@ -35,6 +35,7 @@ dependencies:
     - nbformat
     - webcolors
     - openpyxl
+    - tox
     
 name: code_development_env
 
