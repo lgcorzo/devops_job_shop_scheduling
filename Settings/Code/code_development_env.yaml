@@ -8,7 +8,7 @@ dependencies:
     - scikit-decide==0.9.6
     - simplejson
     - networkx
-    - discrete_optimization==0.2.3
+    - discrete_optimization==0.2.2
     - flake8
     - flake8-formatter-junit-xml
     - numpy
