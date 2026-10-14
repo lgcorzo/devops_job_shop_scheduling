@@ -21,7 +21,13 @@ import webcolors
 
 css_colors = list(webcolors.CSS3_NAMES_TO_HEX.values())
 
-plt.style.use('seaborn-dark')
+try:
+    plt.style.use('seaborn-v0_8-dark')
+except OSError:
+    try:
+        plt.style.use('seaborn-dark')
+    except OSError:
+        pass
 
 
 logger = logging.getLogger(__name__)

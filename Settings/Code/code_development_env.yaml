@@ -2,9 +2,11 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.8.16
+  - python=3.10
   - pip
   - pip:
+    - setuptools<70
+    - nest-asyncio
     - scikit-decide==0.9.6
     - simplejson
     - networkx
