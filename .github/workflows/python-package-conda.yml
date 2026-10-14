@@ -13,9 +13,9 @@ jobs:
       max-parallel: 5
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
     - name:  install minizinc
@@ -56,12 +56,13 @@ jobs:
           pytest -m "not Integration" --cov=Code --cov-report=xml --cov-config=tox.ini --cov-branch
       
     - name: Upload coverage report as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
           name: coverage-report
           path: coverage.xml
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
+      if: ${{ secrets.SONAR_TOKEN != '' }}
+      uses: SonarSource/sonarqube-scan-action@v5
       with:
           args: > 
             -Dsonar.organization=lgcorzo
@@ -75,5 +76,3 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
-      
