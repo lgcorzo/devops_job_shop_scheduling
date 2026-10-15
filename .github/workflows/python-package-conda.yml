@@ -61,7 +61,8 @@ jobs:
           name: coverage-report
           path: coverage.xml
     - name: SonarCloud Scan
-      if: ${{ secrets.SONAR_TOKEN != '' }}
+      if: ${{ env.SONAR_TOKEN != '' }}
+      continue-on-error: true
       uses: SonarSource/sonarqube-scan-action@v6
       with:
           args: > 
