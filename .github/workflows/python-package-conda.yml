@@ -2,6 +2,9 @@ name: Python Package using Conda
 
 on: [push]
 
+permissions:
+  contents: read
+
 env:
   conda_environment_name: 'code_development_env'
 
